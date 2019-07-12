@@ -18,6 +18,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 // Put API Routes Here 
 app.use('/api/users', require('./routes/api/users'));
+app.use('/api/contacts', require('./routes/api/contacts'))
 
 app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));

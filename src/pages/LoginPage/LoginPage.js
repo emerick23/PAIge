@@ -12,7 +12,7 @@ class LoginPage extends Component {
 
   handleChange = (e) => {
     this.setState({
-      // Using ES2015 Computed Property Names
+      //Using ES2015 Computed Property Names
       [e.target.name]: e.target.value
     });
   }
@@ -27,7 +27,7 @@ class LoginPage extends Component {
       this.props.history.push('/');
     } catch (err) {
       // Use a modal or toast in your apps instead of alert
-      alert('this error');
+      alert('Incorrect Credentials');
     }
   }
 
