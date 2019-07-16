@@ -34,3 +34,9 @@ form {
 .row {
     margin-bottom: 0px
 }
+
+.card-panel {
+    margin-top: 20px;
+    border: 1px solid;
+    border-color: rgba(80, 148, 249, .6);
+}

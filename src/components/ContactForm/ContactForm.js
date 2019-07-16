@@ -33,7 +33,12 @@ class ContactForm extends Component {
     }
     render() {
         const contacts = this.props.contacts.map((contact, idx) => (
-            <p>{contact.name}</p>
+            <div class="col s12 m5">
+                <div class="card-panel">
+                    <span class="black-text">{contact.message}</span>
+                </div>
+            </div>
+
         ))
         return (
             <div>
@@ -59,7 +64,9 @@ class ContactForm extends Component {
                             <button type='submit' className='btn btn-default' disabled={this.isFormInvalid()}>Submit</button>
                             <Link className='btn btn-default' to='/'>Cancel</Link>
                         </div>
-                        {contacts}
+                        <div class="row">
+                            {contacts}
+                        </div>
                     </form>
                     <SideBar />
                 </div>

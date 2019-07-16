@@ -27,9 +27,6 @@ class ContactPage extends Component {
     }
 
     render() {
-        // const contacts = this.state.contacts.map((contact, idx) => (
-        //     <p>{contact.name}</p>
-        // ))
         return (
             <div>
                 <NavBar
@@ -41,8 +38,6 @@ class ContactPage extends Component {
                     updateMessage={this.updateMessage}
                     contacts={this.state.contacts}
                 />
-                {/* <p>{this.state.errMessage}</p>
-                {contacts} */}
             </div>
         )
     }
