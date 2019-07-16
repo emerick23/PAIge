@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import contactService from '../../utils/contactService'
 import './ContactForm.css'
+import SideBar from '../SideBar/SideBar'
 
 class ContactForm extends Component {
 
@@ -31,9 +32,11 @@ class ContactForm extends Component {
         return !(this.state.name && this.state.email && this.state.message)
     }
     render() {
+        const contacts = this.props.contacts.map((contact, idx) => (
+            <p>{contact.name}</p>
+        ))
         return (
             <div>
-                <h1>Contact Us</h1>
                 <div className='row'>
                     <form className='col s8' onSubmit={this.handleSubmit}>
                         <div className='row one'>
@@ -56,7 +59,9 @@ class ContactForm extends Component {
                             <button type='submit' className='btn btn-default' disabled={this.isFormInvalid()}>Submit</button>
                             <Link className='btn btn-default' to='/'>Cancel</Link>
                         </div>
+                        {contacts}
                     </form>
+                    <SideBar />
                 </div>
             </div>
         )

@@ -26,3 +26,11 @@
 textarea.materialize-textarea {
     width: 150%
 }
+
+form {
+    margin-top: 50px
+}
+
+.row {
+    margin-bottom: 0px
+}

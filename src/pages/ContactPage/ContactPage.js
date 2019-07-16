@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import contactService from '../../utils/contactService'
 import ContactForm from '../../components/ContactForm/ContactForm'
 import NavBar from '../../components/NavBar/NavBar'
-import Footer from '../../components/Footer/Footer'
+import SideBar from '../../components/SideBar/SideBar'
 
 class ContactPage extends Component {
 
@@ -27,9 +27,9 @@ class ContactPage extends Component {
     }
 
     render() {
-        const contacts = this.state.contacts.map((contact, idx) => (
-            <p>{contact.name}</p>
-        ))
+        // const contacts = this.state.contacts.map((contact, idx) => (
+        //     <p>{contact.name}</p>
+        // ))
         return (
             <div>
                 <NavBar
@@ -39,9 +39,10 @@ class ContactPage extends Component {
                     {...this.props}
                     handleUpdateContacts={this.handleUpdateContacts}
                     updateMessage={this.updateMessage}
+                    contacts={this.state.contacts}
                 />
-                <p>{this.state.errMessage}</p>
-                {contacts}
+                {/* <p>{this.state.errMessage}</p>
+                {contacts} */}
             </div>
         )
     }

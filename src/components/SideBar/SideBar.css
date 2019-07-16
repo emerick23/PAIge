@@ -1,0 +1,9 @@
+.col.s4.sidebar {
+  height: 40rem;
+  background-color: rgba(178, 206, 246, .25);
+}
+
+
+li {
+  padding: 20px
+}
