@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import contactService from '../../utils/contactService'
 import ContactForm from '../../components/ContactForm/ContactForm'
+import NavBar from '../../components/NavBar/NavBar'
+import Footer from '../../components/Footer/Footer'
 
 class ContactPage extends Component {
 
@@ -12,7 +14,7 @@ class ContactPage extends Component {
     async componentDidMount() {
         await contactService.index(this.props.user)
             .then(results => {
-                this.setState({contacts: [...results]})
+                this.setState({ contacts: [...results] })
             })
     }
 
@@ -30,6 +32,9 @@ class ContactPage extends Component {
         ))
         return (
             <div>
+                <NavBar
+                    {...this.props}
+                />
                 <ContactForm
                     {...this.props}
                     handleUpdateContacts={this.handleUpdateContacts}

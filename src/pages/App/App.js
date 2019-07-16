@@ -6,8 +6,7 @@ import LoginPage from '../LoginPage/LoginPage'
 import SignupPage from '../SignupPage/SignupPage'
 import HomePage from '../HomePage/HomePage'
 import ContactPage from '../ContactPage/ContactPage'
-import contactService from '../../utils/contactService';
-
+import ContentPage from '../ContentPage/ContentPage'
 
 class App extends Component {
   constructor() {
@@ -29,7 +28,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
           <Router>
             <Switch>
               <Route exact path='/' render={() =>
@@ -50,21 +48,26 @@ class App extends Component {
                   handleSignupOrLogin={this.handleSignupOrLogin}
                 />
               } />
-              <Route exact path='/contact' render={({history}) =>
-                <ContactPage
-                history={history}
+              <Route exact path='/content-library' render={() =>
+                <ContentPage
                 user={this.state.user}
-                contacts={this.state.contacts}
-                handleUpdateContacts={this.handleUpdateContacts}
-                create={this.create}
+                handleLogout={this.handleLogout}
+                />
+              } />
+              <Route exact path='/contact' render={({ history }) =>
+                <ContactPage
+                  history={history}
+                  user={this.state.user}
+                  handleLogout={this.handleLogout}
+                  contacts={this.state.contacts}
+                  handleUpdateContacts={this.handleUpdateContacts}
                 />
               } />
             </Switch>
           </Router>
-        </header>
       </div>
-        );
-      }
-    }
-    
-    export default App;
+    );
+  }
+}
+
+export default App;

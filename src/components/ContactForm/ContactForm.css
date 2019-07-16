@@ -1,3 +1,28 @@
-.form-control.message {
-    height: 100px
+/* label focus color */
+.input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: #5094F9 !important;
+   }
+
+/* label underline focus color */
+.input-field input[type=text]:focus, .materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #5094F9!important;
+    box-shadow: 0 1px 0 0 #5094F9 !important;
+   }
+
+.btn {
+    background-color: black;
+    margin-left: 5px;
+    margin-right: 5px
+}
+
+.btn:hover, .btn:focus {
+    background-color: #5094F9
+}
+
+.row > .col.s4 {
+    width: 28rem
+}
+
+textarea.materialize-textarea {
+    width: 150%
 }

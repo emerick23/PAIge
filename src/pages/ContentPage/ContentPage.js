@@ -1,18 +1,18 @@
 import React from 'react'
 import NavBar from '../../components/NavBar/NavBar'
-import PaigeHeader from '../../components/PaigeHeader/PaigeHeader'
+import InfoRow from '../../components/InfoRow/InfoRow'
 import Footer from '../../components/Footer/Footer'
 
-const HomePage = props => {
+const ContentPage = (props) => {
     return (
         <div>
             <NavBar
             user={props.user}
             handleLogout={props.handleLogout}
             />
-           <PaigeHeader />
+            <InfoRow />
         </div>
     )
 }
 
-export default HomePage
+export default ContentPage

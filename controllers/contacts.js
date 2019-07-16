@@ -1,6 +1,7 @@
 var Contact = require('../models/contact')
 var User = require('../models/user')
 
+
 async function create(req, res) {
     // const contact = new Contact(req.body.contact)
     User.findById(req.body.user._id, function(err, user) {
@@ -20,9 +21,6 @@ async function index(req, res) {
         let contacts = user.contacts
         res.json(contacts)
     })
-    
-//     const contacts = await Contact.find({})
-//     res.json(contacts)
 }
 
 module.exports = {

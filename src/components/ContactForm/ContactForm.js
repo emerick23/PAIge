@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import contactService from '../../utils/contactService'
 import './ContactForm.css'
 
@@ -16,7 +16,7 @@ class ContactForm extends Component {
             [e.target.name]: e.target.value
         })
     }
-    
+
     handleSubmit = async (e) => {
         e.preventDefault()
         try {
@@ -30,33 +30,34 @@ class ContactForm extends Component {
     isFormInvalid() {
         return !(this.state.name && this.state.email && this.state.message)
     }
-    render () {
+    render() {
         return (
             <div>
-            <h1>Contact Us</h1>
-            <form className='form-horizontal' onSubmit={this.handleSubmit}>
-                <div className='form-group'>
-                    <div className='col-sm-4'>
-                        <input className='form-control' type='text' name='name' value={this.state.name} placeholder='Name: John Doe' onChange={this.handleChange}></input>
-                    </div>
+                <h1>Contact Us</h1>
+                <div className='row'>
+                    <form className='col s8' onSubmit={this.handleSubmit}>
+                        <div className='row one'>
+                            <div className='input-field col s4'>
+                                <input type='text' name='name' placeholder='John Doe' value={this.state.name} onChange={this.handleChange}></input>
+                                <label className='active black-text' for='name'>Name</label>
+                            </div>
+                            <div className='input-field col s4'>
+                                <input className='form-control' type='text' name='email' value={this.state.email} placeholder='Doe@gmail.com' onChange={this.handleChange}></input>
+                                <label className='active black-text' for='email'>Email</label>
+                            </div>
+                        </div>
+                        <div className='row'>
+                            <div className='input-field col s8'>
+                                <textarea id='textarea1' className='materialize-textarea' type='text' name='message' value={this.state.message} placeholder='Your Question Here' onChange={this.handleChange}></textarea>
+                                <label className='active black-text' for='textarea1'>Message</label>
+                            </div>
+                        </div>
+                        <div className='btnRow'>
+                            <button type='submit' className='btn btn-default' disabled={this.isFormInvalid()}>Submit</button>
+                            <Link className='btn btn-default' to='/'>Cancel</Link>
+                        </div>
+                    </form>
                 </div>
-                <div className='form-group'>
-                    <div className='col-sm-4'>
-                        <input className='form-control' type='text' name='email' value={this.state.email} placeholder='Email: JohnDoe@gmail.com' onChange={this.handleChange}></input>
-                    </div>
-                </div>
-                <div className='form-group'>
-                    <div className='col-sm-12'>
-                        <textarea className='form-control' rows='3' type='text' name='message' value={this.state.message} placeholder='Message: Your question here' onChange={this.handleChange}></textarea>
-                    </div>
-                </div>
-                <div className='form-group'>
-                    <div className='col-sm-12'>
-                        <button type='submit' className='btn btn-default' disabled={this.isFormInvalid()}>Submit</button>
-                        <Link to='/'>Cancel</Link>
-                    </div>
-                </div>
-            </form>
             </div>
         )
     }

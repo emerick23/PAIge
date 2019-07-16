@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const SALT_ROUNDS = 6;
-const Schema = mongoose.Schema
 
 const userSchema = new mongoose.Schema({
     name: String,
