@@ -1,7 +1,5 @@
-img.responsive-img {
-    max-width: 50%;
-}
 
 .container {
-    align-items: center
+    align-items: center;
+    width: 100vmax
 }
