@@ -1,0 +1,4 @@
+.gradientBack {
+    background: linear-gradient(rgba(242,242,242,1) 22%, rgb(98, 155, 191) 85%);
+    background-attachment: fixed;
+}
